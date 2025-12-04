@@ -60,3 +60,16 @@ document.addEventListener('click', function(e) {
         }
     }
 });
+
+// ==========================================================================
+// Download Button Functionality
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all download buttons
+    const downloadButtons = document.querySelectorAll('.btn-download');
+    
+    // Add click event listener to each download button
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Check if

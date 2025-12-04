@@ -414,5 +414,127 @@
             padding: 1rem;
         }
     }
-    
+
+    /* ==========================================================================
+   New Sections Responsive Styles
+   ========================================================================== */
+
+    @media (max-width: 992px) {
+        .download-card {
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+
+        .download-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .download-icon i {
+            font-size: 2rem;
+        }
+
+        .download-info h3 {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .download-card {
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+
+        .download-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .download-icon i {
+            font-size: 2rem;
+        }
+
+        .download-info h3 {
+            font-size: 1.5rem;
+        }
+
+        .btn-download {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            justify-content: center;
+        }
+
+        .coming-soon {
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            gap: 1.5rem;
+        }
+
+        .coming-soon-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .coming-soon-icon i {
+            font-size: 1.8rem;
+        }
+
+        .coming-soon-content {
+            text-align: center;
+        }
+
+        .coming-soon-content h4 {
+            font-size: 1.5rem;
+        }
+
+        .coming-soon-content p {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .download-card {
+            padding: 1.5rem;
+        }
+
+        .download-info h3 {
+            font-size: 1.3rem;
+        }
+
+        .download-info p {
+            font-size: 1rem;
+        }
+
+        .btn-download {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .coming-soon {
+            padding: 1.5rem 1rem;
+        }
+
+        .coming-soon-content h4 {
+            font-size: 1.3rem;
+        }
+
+        .coming-soon-content p {
+            font-size: 0.9rem;
+        }
+    }
+}
+@media (max-width: 768px) {
+    /* Add mobile menu items for CFP and Registration */
+    .menu::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background: #eee;
+        margin: 10px 0;
+    }
 }
