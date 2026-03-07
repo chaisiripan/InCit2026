@@ -1,540 +1,325 @@
-/* Responsive Design */
-/* เมื่อหน้าจอกว้างต่ำกว่า 900px */
-@media (max-width: 900px) {
-    nav .menu {
-        gap: 15px;
-        justify-content: space-between;
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Tablet Devices (768px - 992px) */
+@media (max-width: 992px) {
+
+    /* Header */
+    .logo-text h1 {
+        font-size: 2rem;
     }
 
-    /* ปุ่ม Register อยู่บรรทัดใหม่ สวยงาม */
-    .menu-right {
-        margin-left: 0 !important;
+    .header-date h2 {
+        font-size: 1rem;
+    }
+
+    .header-buttons-group {
+        gap: 8px;
+    }
+
+    .btn-download-nav,
+    .btn-register {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text,
+    .about-image {
         width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding-top: 10px;
     }
 
-    .register-btn {
-        padding: 10px 22px;
+    /* Download Card */
+    .download-card {
+        padding: 2rem;
+        gap: 1.5rem;
     }
 
-    .hero h2 {
-        font-size: 2.5rem;
+    .download-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .download-icon i {
+        font-size: 2rem;
+    }
+
+    .download-info h3 {
+        font-size: 1.6rem;
     }
 }
 
-/* เมื่อหน้าจอเล็กมาก (มือถือแนวตั้ง) */
+/* Mobile Devices (576px - 768px) */
 @media (max-width: 768px) {
+
+    /* Header */
     .header-top {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
     }
 
-    .logo-container {
-        margin-bottom: 1rem;
-    }
-
-    .header-date {
-        text-align: center;
-    }
-
-    /* Hamburger Menu */
     .menu-toggle {
         display: block;
-        position: absolute;
-        top: 1rem;
-        right: 0;
     }
 
-    nav .menu {
+    /* Navigation */
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    .menu {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
         width: 100%;
     }
 
-    nav .menu.active {
-        max-height: 1000px;
-        padding-top: 1rem;
-    }
-
-    nav .menu li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    nav .menu>li>a {
-        padding: 12px 0;
+    .menu>li {
         width: 100%;
     }
 
-    .menu-right {
-        width: 100%;
+    .menu>li>a {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        background-color: #f8f9fa;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-sub-content {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+    }
+
+    .dropdown-sub.active .dropdown-sub-content {
+        display: block;
+    }
+
+    /* Header Buttons Group */
+    .header-buttons-group {
+        display: none;
+    }
+
+    /* Mobile Buttons in Menu */
+    .mobile-buttons {
         display: flex;
-        justify-content: flex-start;
-        padding-top: 10px;
-        border-bottom: none;
-    }
-
-    .register-btn {
-        width: 100%;
-        text-align: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
         margin-top: 10px;
+        border-top: 1px solid #eee;
     }
 
-    .hero h2 {
-        font-size: 2rem;
+    .mobile-buttons .btn-download-nav,
+    .mobile-buttons .btn-register {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 0;
+        min-height: 50vh;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
     }
 
     .hero p {
         font-size: 1.1rem;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 100%;
-        display: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .dropdown.active .dropdown-content {
-        display: block;
-        max-height: 500px;
-    }
-
-    .dropdown-content a {
-        color: white !important;
-        padding-left: 20px;
-    }
-
-    .dropdown-sub-content {
-        position: static;
-        box-shadow: none;
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 100%;
-        display: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .dropdown-sub.active .dropdown-sub-content {
-        display: block;
-        max-height: 500px;
-    }
-
-    .dropdown-sub-content a {
-        padding-left: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
+    /* Section Titles */
     .section-title h2 {
         font-size: 1.8rem;
     }
 
-    .dates-container,
-    .tracks-container,
-    .committee-container {
+    /* Download Card */
+    .download-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .download-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .download-icon i {
+        font-size: 2rem;
+    }
+
+    .download-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn-download {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .coming-soon-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .coming-soon-icon i {
+        font-size: 1.8rem;
+    }
+
+    .coming-soon-content {
+        text-align: center;
+    }
+
+    .coming-soon-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .coming-soon-content p {
+        font-size: 1rem;
+    }
+
+    /* Dates Container */
+    .dates-container {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .footer-content {
+    /* Tracks Container */
+    .tracks-container {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .about-image img {
-        max-height: 250px;
-        object-fit: cover;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 1.6rem;
-    }
-
-    .section-title h2 {
-        font-size: 1.6rem;
-    }
-
+    /* Modern Cards Mobile Padding */
     .date-card,
-    .track-card {
+    .track-card,
+    .committee-card,
+    .info-card,
+    .proceedings-card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    /* Bangkok Theme Mobile */
+    .bangkok-theme {
+        padding: 4rem 1rem;
+    }
+
+    .bangkok-theme h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Small Mobile Devices (小于 576px) */
+@media (max-width: 576px) {
+
+    /* Header */
+    .logo-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-date {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Section Titles */
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Download Card */
+    .download-card {
         padding: 1.5rem;
     }
 
-    .about-image img {
-        max-height: 200px;
+    .download-info h3 {
+        font-size: 1.3rem;
     }
 
-    /* Keynote Page Responsive */
-    @media (max-width: 768px) {
-        .coming-soon-content {
-            padding: 2rem;
-            margin: 1rem;
-        }
-
-        .coming-soon-icon {
-            font-size: 3rem;
-        }
-
-        .coming-soon-content h3 {
-            font-size: 2rem;
-        }
-
-        .speakers-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .speaker-card {
-            padding: 1.5rem;
-        }
+    .download-info p {
+        font-size: 1rem;
     }
 
-    @media (max-width: 480px) {
-        .coming-soon-content {
-            padding: 1.5rem;
-        }
-
-        .coming-soon-icon {
-            font-size: 2.5rem;
-        }
-
-        .coming-soon-content h3 {
-            font-size: 1.8rem;
-        }
-
-        .speaker-avatar {
-            width: 80px;
-            height: 80px;
-            font-size: 2rem;
-        }
+    .btn-download {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
     }
 
-    /* Committee Page Responsive */
-    @media (max-width: 768px) {
-        .committee-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .committee-type-card {
-            padding: 2rem 1.5rem;
-        }
-
-        .committee-members-grid {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-
-        .committee-member {
-            padding: 1.5rem;
-        }
-
-        .member-avatar {
-            width: 70px;
-            height: 70px;
-            font-size: 1.8rem;
-        }
+    /* Coming Soon */
+    .coming-soon {
+        padding: 1.5rem 1rem;
     }
 
-    @media (max-width: 480px) {
-        .committee-members-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .committee-type-card {
-            padding: 1.5rem 1rem;
-        }
-
-        .committee-icon {
-            font-size: 2.5rem;
-        }
-
-        .member-avatar {
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-        }
+    .coming-soon-content h4 {
+        font-size: 1.3rem;
     }
 
-    /* Misc Page Responsive */
-    @media (max-width: 768px) {
-        .categories-grid {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .category-card {
-            padding: 1.5rem;
-        }
-
-        .category-icon {
-            width: 70px;
-            height: 70px;
-            font-size: 1.8rem;
-        }
+    .coming-soon-content p {
+        font-size: 0.9rem;
     }
 
-    @media (max-width: 480px) {
-        .categories-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .category-card {
-            padding: 1.25rem;
-        }
-
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-        }
+    /* Footer */
+    .footer-section h3 {
+        font-size: 1.3rem;
     }
 
-    /* Proceedings Page Responsive */
-    @media (max-width: 768px) {
-        .proceedings-info {
-            grid-template-columns: 1fr;
-        }
-
-        .info-card {
-            padding: 2rem;
-        }
-
-        .proceedings-timeline {
-            padding-left: 1.5rem;
-        }
-
-        .timeline-item::before {
-            left: -1.9rem;
-        }
-
-        .proceedings-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .proceedings-card {
-            padding: 1.5rem;
-        }
-
-        .proceedings-card h4 {
-            padding-right: 0;
-            margin-top: 1rem;
-        }
-
-        .proceedings-year {
-            position: static;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .proceedings-stats {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .info-card {
-            padding: 1.5rem;
-        }
-
-        .info-icon {
-            font-size: 2.5rem;
-        }
-
-        .proceedings-timeline {
-            padding-left: 1rem;
-        }
-
-        .timeline-item::before {
-            left: -1.4rem;
-        }
-    }
-
-    /* Presentation Guidelines Page Responsive */
-    @media (max-width: 900px) {
-        .info-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-    }
-
-    @media (max-width: 768px) {
-        .info-card {
-            padding: 2rem;
-        }
-
-        .info-icon {
-            font-size: 2.5rem;
-        }
-
-        .dates-reminder {
-            padding: 2rem;
-            margin: 2rem 1rem 0;
-        }
-
-        .dates-mini {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .info-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .info-card {
-            padding: 1.5rem;
-        }
-
-        .info-icon {
-            font-size: 2rem;
-        }
-
-        .dates-reminder {
-            padding: 1.5rem;
-        }
-
-        .date-mini-card {
-            padding: 1rem;
-        }
-    }
-
-    /* ==========================================================================
-   New Sections Responsive Styles
-   ========================================================================== */
-
-    @media (max-width: 992px) {
-        .download-card {
-            padding: 2rem;
-            gap: 1.5rem;
-        }
-
-        .download-icon {
-            width: 70px;
-            height: 70px;
-        }
-
-        .download-icon i {
-            font-size: 2rem;
-        }
-
-        .download-info h3 {
-            font-size: 1.6rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .download-card {
-            flex-direction: column;
-            text-align: center;
-            padding: 2rem;
-            gap: 1.5rem;
-        }
-
-        .download-icon {
-            width: 70px;
-            height: 70px;
-        }
-
-        .download-icon i {
-            font-size: 2rem;
-        }
-
-        .download-info h3 {
-            font-size: 1.5rem;
-        }
-
-        .btn-download {
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            justify-content: center;
-        }
-
-        .coming-soon {
-            flex-direction: column;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            gap: 1.5rem;
-        }
-
-        .coming-soon-icon {
-            width: 60px;
-            height: 60px;
-        }
-
-        .coming-soon-icon i {
-            font-size: 1.8rem;
-        }
-
-        .coming-soon-content {
-            text-align: center;
-        }
-
-        .coming-soon-content h4 {
-            font-size: 1.5rem;
-        }
-
-        .coming-soon-content p {
-            font-size: 1rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .download-card {
-            padding: 1.5rem;
-        }
-
-        .download-info h3 {
-            font-size: 1.3rem;
-        }
-
-        .download-info p {
-            font-size: 1rem;
-        }
-
-        .btn-download {
-            padding: 0.7rem 1.2rem;
-            font-size: 0.9rem;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .coming-soon {
-            padding: 1.5rem 1rem;
-        }
-
-        .coming-soon-content h4 {
-            font-size: 1.3rem;
-        }
-
-        .coming-soon-content p {
-            font-size: 0.9rem;
-        }
-    }
-}
-@media (max-width: 768px) {
-    /* Add mobile menu items for CFP and Registration */
-    .menu::after {
-        content: '';
-        display: block;
-        height: 1px;
-        background: #eee;
-        margin: 10px 0;
+    .copyright {
+        font-size: 0.8rem;
     }
 }

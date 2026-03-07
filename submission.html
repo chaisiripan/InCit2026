@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission - InCIT 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, rgba(30, 61, 111, 0.9), rgba(193, 42, 53, 0.9)), url("img/Main.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .submission-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid var(--bangkok-red);
+        }
+
+        .submission-container h3 {
+            color: var(--bangkok-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .submission-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .submission-list {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .submission-list li {
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .btn-submission-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--bangkok-blue), #2a5298);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(30, 61, 111, 0.2);
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .btn-submission-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30, 61, 111, 0.3);
+            background: linear-gradient(135deg, #2a5298, var(--bangkok-blue));
+            color: white;
+        }
+
+        .btn-submission-large i {
+            font-size: 1.5rem;
+        }
+
+        .template-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .template-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8f9fa;
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s;
+        }
+
+        .template-btn:hover {
+            background: var(--bangkok-gold);
+            color: white;
+            border-color: var(--bangkok-gold);
+        }
+
+        .template-btn i {
+            color: var(--bangkok-red);
+        }
+
+        .template-btn:hover i {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <h1>InCIT 2026</h1>
+                    </div>
+                </div>
+                <div class="header-date">
+                    <h2>November 12-14, 2026</h2>
+                    <p>Bangkok, Thailand</p>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav>
+                <ul class="menu" id="mainMenu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <!-- Incit2026 -->
+                    <li class="dropdown">
+                        <a href="">InCIT2026 <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="keynote.html">Keynote Speakers</a></li>
+                            <li><a href="committee.html">Committee</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Program -->
+                    <li class="dropdown">
+                        <a href="">Program <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="proceedings.html">Proceedings</a></li>
+                            <li><a href="presentation.html">Presentation Guidelines</a></li>
+                            <li class="dropdown-sub">
+                                <a href="#">Detailed Program <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-sub-content">
+                                    <li><a href="#online">Online</a></li>
+                                    <li><a href="#onsite">Onsite</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Submission -->
+                    <li class="dropdown">
+                        <a href="" class="active">Submission <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="submission.html">Submission</a></li>
+                            <li><a href="index.html#camera">Camera-Ready Instructions</a></li>
+                            <li><a href="index.html#sessions">Regular & Special Sessions</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Venue -->
+                    <li class="dropdown">
+                        <a href="">Venue <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.html#venue">Venue</a></li>
+                            <li><a href="index.html#hotels">Hotels</a></li>
+                            <li><a href="index.html#transport">Transportation</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="menu-right register-btn">
+                        <a href="#" class="btn-register">Registration</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Paper Submission</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Guidelines and submission portal for authors
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="submission-container" id="guidelines">
+            <h3>Paper Submission</h3>
+            <p>
+                Full paper submission in English is expected. All manuscripts must be prepared in the standard IEEE
+                Conference Proceedings format and limited to the maximum of 6 pages of A4 form in PDF format. Please use
+                10 points and Time New Roman font. The authors' names and affiliations, postal addresses, telephones,
+                fax numbers and e-mail addresses must be omitted from the submitted manuscripts. Each manuscript must
+                contain an abstract of about 150 words.
+            </p>
+
+            <a href="https://easychair.org/" target="_blank" class="btn-submission-large">
+                <i class="fas fa-paper-plane"></i> Paper Submission Portal
+            </a>
+
+            <h3 style="margin-top: 3rem;">Submitted Paper Preparation:</h3>
+            <p>
+                The policy of InCIT 2026 review is a blind process. To speed up the reviewing process, it is appreciated
+                if your manuscript is prepared according to the following guidelines:
+            </p>
+            <ul class="submission-list">
+                <li>The authors shall omit their names and affiliation from the submission.</li>
+                <li>In case the authors refer to their own prior work, please do so either by referring to their prior
+                    work in the third person or referencing papers generically.</li>
+                <li>The authors shall exclude citations to their own works which are not fundamental to understanding
+                    the paper, including prior versions (e.g., technical reports, unpublished internal documents) of the
+                    submitted paper.</li>
+                <li>The authors shall remove mention of funding sources, personal acknowledgments, and other such
+                    auxiliary information that could be related to their identities. These can be reinstituted in the
+                    camera-ready copy once the paper is accepted for publication.</li>
+            </ul>
+
+            <h3 style="margin-top: 3rem;">Manuscript Templates for Conference Proceedings</h3>
+            <p>Please download the standard IEEE conference templates below to prepare your manuscript:</p>
+
+            <div class="template-links">
+                <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank"
+                    class="template-btn">
+                    <i class="fab fa-windows"></i> Microsoft Word Template
+                </a>
+                <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank"
+                    class="template-btn">
+                    <i class="fas fa-code"></i> LaTeX Template
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>InCIT 2026 Secretariat</p>
+                    <p>Faculty of Information Technology</p>
+                    <p>Siam University</p>
+                    <p>Bangkok, Thailand</p>
+                    <p>Email: incit2026@siam.edu</p>
+                    <p>Phone: +66 (0) 2-457-0068, 2-867-8000, 2-868-6000 ext. 5130</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 InCIT - International Conference on Information Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
