@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/presentation.css">
 </head>
 
 <body>
@@ -55,10 +56,10 @@
 
                             <!-- Sub-dropdown -->
                             <li class="dropdown-sub">
-                                <a href="#">Detailed Program <i class="fas fa-chevron-right"></i></a>
+                                <a href="program.html">Detailed Program <i class="fas fa-chevron-right"></i></a>
                                 <ul class="dropdown-sub-content">
-                                    <li><a href="index.html#online">Online</a></li>
-                                    <li><a href="index.html#onsite">Onsite</a></li>
+                                    <li><a href="online.html">Online</a></li>
+                                    <li><a href="onsite.html">Onsite</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -69,8 +70,8 @@
                         <a href="">Submission <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="submission.html">Submission</a></li>
-                            <li><a href="index.html#camera">Camera-Ready Instructions</a></li>
-                            <li><a href="index.html#sessions">Regular & Special Sessions</a></li>
+                            <li><a href="camera.html">Camera-Ready Instructions</a></li>
+                            <li><a href="sessions.html">Regular & Special Sessions</a></li>
                         </ul>
                     </li>
 
@@ -78,15 +79,15 @@
                     <li class="dropdown">
                         <a href="">Venue <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="index.html#venue">Venue</a></li>
-                            <li><a href="index.html#hotels">Hotels</a></li>
-                            <li><a href="index.html#transport">Transportation</a></li>
+                            <li><a href="venue.html">Venue</a></li>
+                            <li><a href="hotels.html">Hotels</a></li>
+                            <li><a href="transport.html">Transportation</a></li>
                         </ul>
                     </li>
 
                     <li><a href="index.html#contact">Contact</a></li>
                     <li class="menu-right register-btn">
-                        <a href="#" class="btn-register">Registration</a>
+                        <a href="registration.html" class="btn-register">Registration</a>
                     </li>
                 </ul>
             </nav>
@@ -111,72 +112,77 @@
                 <div class="section-title">
                     <h2>Presentation Guidelines</h2>
                 </div>
-                <div class="coming-soon-container">
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Coming Soon</h3>
-                        <p>We are currently preparing comprehensive presentation guidelines for InCIT 2026.</p>
-                        <p>Detailed instructions for both onsite and online presentations will be available here,
-                            including technical requirements, time allocations, and best practices for effective
-                            presentations.</p>
-                        <div class="countdown-info">
-                            <p>Presentation guidelines will be published in September 2026</p>
+                <div class="guidelines-intro">
+                    <div class="guideline-duration">
+                        <div class="duration-icon"><i class="fas fa-clock"></i></div>
+                        <div class="duration-text">
+                            <h3>Presentation Duration</h3>
+                            <p>Each presenter is allocated <strong>15 minutes</strong> in total (10-minute talk +
+                                5-minute Q&A). Please manage your time carefully to allow smooth transitions between
+                                speakers.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- General Information Section -->
-                <div class="info-sections">
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Onsite Presentations</h4>
-                            <p>Information about in-person presentation requirements, equipment provided, and session
-                                formats.</p>
-                            <ul class="info-list">
-                                <li>Presentation duration</li>
-                                <li>Technical equipment</li>
-                                <li>Session chair guidelines</li>
-                                <li>Q&A procedures</li>
+                <div class="guidelines-grid">
+                    <div class="guideline-card onsite">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3>Onsite Presentations</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="custom-list">
+                                <li><i class="fas fa-check-circle"></i> A computer (Windows OS) and projector will be
+                                    provided in every session room.</li>
+                                <li><i class="fas fa-check-circle"></i> Presenters should copy their presentation file
+                                    (PowerPoint or PDF) to the provided computer before the session begins.</li>
+                                <li><i class="fas fa-check-circle"></i> Please arrive <strong>10 minutes early</strong>
+                                    to test your slides and ensure everything works properly.</li>
+                                <li><i class="fas fa-check-circle"></i> Check that all videos, animations, and fonts
+                                    display correctly.</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-laptop"></i>
-                            </div>
-                            <h4>Online Presentations</h4>
-                            <p>Guidelines for virtual presenters including platform requirements and technical
-                                specifications.</p>
-                            <ul class="info-list">
-                                <li>Platform requirements</li>
-                                <li>Technical specifications</li>
-                                <li>Recording guidelines</li>
-                                <li>Virtual Q&A sessions</li>
-                            </ul>
+                    <div class="guideline-card online">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-laptop-house"></i></div>
+                            <h3>Online Presentations</h3>
                         </div>
-
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-file-powerpoint"></i>
-                            </div>
-                            <h4>Presentation Templates</h4>
-                            <p>Official templates and formatting guidelines for your presentation slides.</p>
-                            <ul class="info-list">
-                                <li>Slide templates</li>
-                                <li>Formatting guidelines</li>
-                                <li>Branding requirements</li>
-                                <li>Accessibility standards</li>
+                        <div class="card-body">
+                            <ul class="custom-list">
+                                <li><i class="fas fa-check-circle"></i> Online sessions will be conducted via
+                                    <strong>Zoom</strong>.</li>
+                                <li><i class="fas fa-check-circle"></i> The Zoom meeting link and session schedule will
+                                    be sent to all presenters in advance.</li>
+                                <li><i class="fas fa-check-circle"></i> Please join at least <strong>10 minutes
+                                        before</strong> your session to test your microphone, camera, and screen
+                                    sharing.</li>
+                                <li><i class="fas fa-check-circle"></i> Presenters do not need to send their
+                                    presentation file to the committee — you may share your screen directly during your
+                                    session.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Important Dates Reminder -->
+                <div class="additional-notes">
+                    <div class="notes-header">
+                        <h3><i class="fas fa-info-circle"></i> Additional Notes</h3>
+                    </div>
+                    <div class="notes-content">
+                        <ul class="custom-notes-list">
+                            <li>Please use clear and readable slides.</li>
+                            <li>Keep your presentation professional and focused on your research contribution.</li>
+                            <li>Session chairs will help manage timing and facilitate questions.</li>
+                            <li>If you prefer to use your own laptop for onsite presentations, please ensure that it is
+                                compatible with the display port provided in the session room (HDMI or VGA adapters may
+                                be required).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Important Dates Reminder 
                 <div class="dates-reminder">
                     <div class="section-title">
                         <h3>Important Dates for Presenters</h3>
@@ -195,7 +201,7 @@
                             <div class="date-mini-date">November 12-13, 2026</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
