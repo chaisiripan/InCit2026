@@ -105,104 +105,177 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Committee Structure Section -->
+        <!-- Committee Section -->
         <section id="committee-structure">
             <div class="container">
                 <div class="section-title">
-                    <h2>Committee Structure</h2>
+                    <h2>Conference Committee</h2>
                 </div>
 
-                <div class="coming-soon-container">
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Coming Soon</h3>
-                        <p>We are currently forming the conference committees for InCIT 2026.</p>
-                        <p>The committee structure will include distinguished professionals from academia and industry
-                            who will contribute to making this conference a success.</p>
-                        <div class="countdown-info">
-                            <p>Committee details will be announced in early 2026</p>
-                        </div>
-                    </div>
-                </div>
+                <style>
+                    .committee-modern-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 2.5rem;
+                        margin-top: 2rem;
+                    }
 
-                <!-- Committee Types -->
-                <div class="committee-types">
-                    <div class="section-title">
-                        <h3>Committee Types</h3>
-                    </div>
-                    <div class="committee-grid">
-                        <div class="committee-type-card">
-                            <div class="committee-icon">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <h4>Steering Committee</h4>
-                            <p>Overall conference direction and strategic planning</p>
-                        </div>
-                        <div class="committee-type-card">
-                            <div class="committee-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h4>Technical Program Committee</h4>
-                            <p>Paper review, selection, and technical program organization</p>
-                        </div>
-                        <div class="committee-type-card">
-                            <div class="committee-icon">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <h4>Organizing Committee</h4>
-                            <p>Local arrangements, logistics, and conference operations</p>
-                        </div>
-                        <div class="committee-type-card">
-                            <div class="committee-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h4>Advisory Committee</h4>
-                            <p>Expert guidance and international liaison</p>
-                        </div>
-                    </div>
-                </div>
+                    .committee-card-modern {
+                        background: linear-gradient(145deg, #ffffff, #f9fbfd);
+                        border-radius: 20px;
+                        padding: 2.5rem 2rem;
+                        text-align: center;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        position: relative;
+                        overflow: hidden;
+                        border: 1px solid rgba(0, 0, 0, 0.03);
+                        z-index: 1;
+                    }
 
-                <!-- Previous Committees -->
-                <div class="previous-committees">
-                    <div class="section-title">
-                        <h3>Previous Conference Committees</h3>
+                    .committee-card-modern::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 6px;
+                        background: linear-gradient(90deg, var(--bangkok-gold), var(--bangkok-red));
+                        transition: height 0.3s ease;
+                        z-index: -1;
+                    }
+
+                    .committee-card-modern:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .committee-card-modern:hover::after {
+                        height: 100%;
+                        opacity: 0.03;
+                    }
+
+                    .c-icon {
+                        width: 80px;
+                        height: 80px;
+                        margin: 0 auto 1.5rem;
+                        background: linear-gradient(135deg, rgba(30, 61, 111, 0.1), rgba(193, 42, 53, 0.1));
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2.5rem;
+                        color: var(--bangkok-blue);
+                        transition: all 0.4s ease;
+                    }
+
+                    .committee-card-modern:hover .c-icon {
+                        background: linear-gradient(135deg, var(--bangkok-blue), var(--bangkok-red));
+                        color: white;
+                        transform: scale(1.1) rotateY(180deg);
+                    }
+
+                    .c-role {
+                        color: var(--bangkok-red);
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        margin-bottom: 0.8rem;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+
+                    .c-name {
+                        color: var(--bangkok-blue);
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .c-affil {
+                        color: var(--gray);
+                        font-size: 0.95rem;
+                        font-style: italic;
+                    }
+
+                    .c-soon .c-icon {
+                        background: #f1f3f5;
+                        color: #adb5bd;
+                    }
+
+                    .c-soon .c-name {
+                        color: #6c757d;
+                        font-style: italic;
+                    }
+
+                    .c-soon:hover .c-icon {
+                        background: var(--bangkok-gold);
+                        color: white;
+                        transform: scale(1.1);
+                    }
+                </style>
+
+                <div class="committee-modern-grid">
+
+                    <!-- Honorary Committee -->
+                    <div class="committee-card-modern c-soon">
+                        <div class="c-icon"><i class="fas fa-award"></i></div>
+                        <div class="c-role">Honorary Committee</div>
+                        <div class="c-name">Coming Soon</div>
                     </div>
-                    <div class="committee-members-grid">
-                        <div class="committee-member placeholder">
-                            <div class="member-avatar">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4>Conference Chair</h4>
-                            <p class="member-role">Overall Leadership</p>
-                            <p class="member-affiliation">Prestigious University</p>
-                        </div>
-                        <div class="committee-member placeholder">
-                            <div class="member-avatar">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4>Program Chair</h4>
-                            <p class="member-role">Technical Program</p>
-                            <p class="member-affiliation">Leading Institution</p>
-                        </div>
-                        <div class="committee-member placeholder">
-                            <div class="member-avatar">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4>Publication Chair</h4>
-                            <p class="member-role">Proceedings & Publications</p>
-                            <p class="member-affiliation">Research Organization</p>
-                        </div>
-                        <div class="committee-member placeholder">
-                            <div class="member-avatar">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4>Local Chair</h4>
-                            <p class="member-role">Local Arrangements</p>
-                            <p class="member-affiliation">Host University</p>
-                        </div>
+
+                    <!-- Advisory Committee -->
+                    <div class="committee-card-modern c-soon">
+                        <div class="c-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="c-role">Advisory Committee</div>
+                        <div class="c-name">Coming Soon</div>
                     </div>
+
+                    <!-- General Chair -->
+                    <div class="committee-card-modern">
+                        <div class="c-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="c-role">General Chair</div>
+                        <div class="c-name">Assoc.Prof. Krisana Chinnasarn</div>
+                        <div class="c-affil">Burapha University, Thailand</div>
+                    </div>
+
+                    <!-- General committee -->
+                    <div class="committee-card-modern">
+                        <div class="c-icon"><i class="fas fa-users"></i></div>
+                        <div class="c-role">General Committee</div>
+                        <div class="c-name">Assoc. Prof. Aziz Nanthaamornphong</div>
+                        <div class="c-affil">Prince of Songkla University, Thailand</div>
+                    </div>
+
+                    <!-- Technical Program Chair -->
+                    <div class="committee-card-modern c-soon">
+                        <div class="c-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="c-role">Technical Program Chair</div>
+                        <div class="c-name">Coming Soon</div>
+                    </div>
+
+                    <!-- Technical committee -->
+                    <div class="committee-card-modern">
+                        <div class="c-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="c-role">Technical Committee</div>
+                        <div class="c-name">Dr. Narongrit Sukonthasing</div>
+                        <div class="c-affil">Siam University, Thailand</div>
+                    </div>
+
+                    <!-- Publication Chair -->
+                    <div class="committee-card-modern">
+                        <div class="c-icon"><i class="fas fa-book"></i></div>
+                        <div class="c-role">Publication Chair</div>
+                        <div class="c-name">Dr. Saranthon Maungmee</div>
+                        <div class="c-affil">Siam University, Thailand</div>
+                    </div>
+
+                    <!-- Local Arrangement Chair -->
+                    <div class="committee-card-modern c-soon">
+                        <div class="c-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="c-role">Local Arrangement Chair</div>
+                        <div class="c-name">Coming Soon</div>
+                    </div>
+
                 </div>
             </div>
         </section>

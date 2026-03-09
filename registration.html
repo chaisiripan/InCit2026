@@ -107,23 +107,215 @@
         <section id="content">
             <div class="container">
                 <div class="section-title">
-                    <h2>Registration</h2>
+                    <h2>Registration Info</h2>
                 </div>
-                <div class="coming-soon-container">
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-icon">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                        <h3>Coming Soon</h3>
-                        <p>We are currently preparing information for Registration.</p>
-                        <p>Please check back later for more updates.</p>
+
+                <style>
+                    .registration-section {
+                        background: #fff;
+                        border-radius: 12px;
+                        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                        padding: 2.5rem;
+                        margin-bottom: 2.5rem;
+                        border-top: 4px solid var(--bangkok-blue);
+                    }
+
+                    .registration-section h3 {
+                        color: var(--bangkok-red);
+                        margin-bottom: 1.5rem;
+                        font-size: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .registration-section p {
+                        margin-bottom: 1rem;
+                        color: var(--dark);
+                    }
+
+                    .registration-section ul {
+                        margin-left: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        color: var(--dark);
+                    }
+
+                    .registration-section li {
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .registration-table table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 2rem;
+                        background: #fff;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+                    }
+
+                    .registration-table th,
+                    .registration-table td {
+                        padding: 1rem;
+                        text-align: left;
+                        border: 1px solid #e0e0e0;
+                    }
+
+                    .registration-table th {
+                        background: var(--bangkok-blue);
+                        color: white;
+                        font-weight: 600;
+                    }
+
+                    .registration-table tr:nth-child(even) {
+                        background: #f8f9fa;
+                    }
+
+                    .registration-table tr:hover {
+                        background: #f1f3f5;
+                    }
+
+                    .alert-note {
+                        background: #fff3cd;
+                        color: #856404;
+                        padding: 1rem;
+                        border-left: 4px solid #ffc107;
+                        border-radius: 4px;
+                        margin-top: 1.5rem;
+                    }
+
+                    .method-box {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 8px;
+                        padding: 1.5rem;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .method-box h4 {
+                        color: var(--bangkok-blue);
+                        margin-bottom: 1rem;
+                        font-size: 1.2rem;
+                    }
+                </style>
+
+                <div class="registration-section">
+                    <h3><i class="fas fa-lock"></i> Status</h3>
+                    <p><strong>Registration is not available yet.</strong> Please check back later. Registration will be
+                        open soon.</p>
+                </div>
+
+                <div class="registration-section">
+                    <h3><i class="fas fa-user-edit"></i> Author Registration</h3>
+                    <ul>
+                        <li>At least one author per accepted paper needs to be registered.</li>
+                    </ul>
+                </div>
+
+                <div class="registration-section">
+                    <h3><i class="fas fa-money-bill-wave"></i> Registration Fees</h3>
+                    <p>All fees are quoted in Thai Baht (THB).</p>
+
+                    <div class="registration-table" style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rate</th>
+                                    <th>Sub-rate</th>
+                                    <th>Onsite (THB)</th>
+                                    <th>Online (THB)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="4"><strong>Early Bird</strong></td>
+                                    <td>IEEE Member (Member ID is required)</td>
+                                    <td>16,000.00</td>
+                                    <td>13,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Non-IEEE Member</td>
+                                    <td>18,000.00</td>
+                                    <td>15,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Student (Student card is required)</td>
+                                    <td>13,000.00</td>
+                                    <td>10,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Participant</td>
+                                    <td>5,000.00</td>
+                                    <td>5,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4"><strong>Regular</strong></td>
+                                    <td>IEEE Member (Member ID is required)</td>
+                                    <td>18,000.00</td>
+                                    <td>15,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Non-IEEE Member</td>
+                                    <td>20,000.00</td>
+                                    <td>17,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Student (Student card is required)</td>
+                                    <td>15,000.00</td>
+                                    <td>12,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Participant</td>
+                                    <td>5,000.00</td>
+                                    <td>5,000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert-note"
+                        style="background-color: #f8f9fa; border-left-color: var(--bangkok-blue); color: var(--dark); margin-top: 1rem;">
+                        <i class="fas fa-info-circle" style="color: var(--bangkok-blue);"></i> <strong>Note:</strong>
+                        There will be a 10% discount on the 2nd and 3rd papers for the same registered participant who
+                        submits the 2nd and 3rd accepted papers. The organizers reserve the right to apply this discount
+                        for up to 3 papers. If you have accepted more than one paper and wish to get the 10% discount,
+                        please email us (<a href="mailto:incit2026@siam.edu">incit2026@siam.edu</a>) for the discount
+                        code.
                     </div>
                 </div>
+
+                <div class="registration-section">
+                    <h3><i class="fas fa-gift"></i> All registration rates Include:</h3>
+                    <ul>
+                        <li>Welcome kit</li>
+                        <li>Lunches and breaks</li>
+                        <li>Welcome dinner</li>
+                        <li>Banquet</li>
+                    </ul>
+                    <div class="alert-note">
+                        <i class="fas fa-exclamation-triangle"></i> <strong>Note:</strong> Please note that all items
+                        are excluded for the online presentation / online participation registration.
+                    </div>
+                </div>
+
+                <div class="registration-section">
+                    <h3><i class="fas fa-credit-card"></i> Methods of Payment</h3>
+                    <p>InCIT 2026 makes two payment methods available:</p>
+                    <p><strong>If you are submitting multiple papers, please complete the registration for each paper
+                            individually.</strong></p>
+
+                    <div class="method-box" style="text-align: center; padding: 3rem;">
+                        <h4 style="font-size: 1.5rem; color: var(--gray); margin-bottom: 0;">
+                            <i class="fas fa-hourglass-half"
+                                style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                            Coming Soon
+                        </h4>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
-<footer id="contact">
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
