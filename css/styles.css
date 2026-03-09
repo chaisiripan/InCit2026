@@ -94,7 +94,7 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 32px;
     align-items: center;
     flex-wrap: wrap;
     transition: all 0.3s ease;
@@ -164,7 +164,9 @@ nav a:hover::after {
 .dropdown-content a {
     color: var(--dark) !important;
     padding: 12px 20px;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-decoration: none;
     font-weight: 500;
     border-radius: 8px;

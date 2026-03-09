@@ -88,6 +88,7 @@
     .menu {
         flex-direction: column;
         width: 100%;
+        gap: 0;
     }
 
     .menu>li {
