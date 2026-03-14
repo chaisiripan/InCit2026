@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -133,6 +133,30 @@
                         display: flex;
                         gap: 2rem;
                         align-items: center;
+                        position: relative;
+                        cursor: pointer;
+                        transition: background 0.3s ease;
+                    }
+
+                    .keynote-header:hover {
+                        background: linear-gradient(135deg, #112a52, var(--bangkok-blue));
+                    }
+
+                    .keynote-header::after {
+                        content: '\f107'; /* FontAwesome angle-down */
+                        font-family: 'Font Awesome 6 Free';
+                        font-weight: 900;
+                        position: absolute;
+                        right: 2.5rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 2rem;
+                        color: var(--bangkok-gold);
+                        transition: transform 0.3s ease;
+                    }
+
+                    .keynote-card.active .keynote-header::after {
+                        transform: translateY(-50%) rotate(180deg);
                     }
 
                     .speaker-avatar-large {
@@ -169,7 +193,18 @@
                     }
 
                     .keynote-body {
+                        display: none;
                         padding: 2.5rem;
+                        animation: fadeIn 0.4s ease;
+                    }
+
+                    .keynote-card.active .keynote-body {
+                        display: block;
+                    }
+
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(-10px); }
+                        to { opacity: 1; transform: translateY(0); }
                     }
 
                     .keynote-title-box {
@@ -218,6 +253,18 @@
                         .keynote-header {
                             flex-direction: column;
                             text-align: center;
+                            padding-bottom: 4rem;
+                        }
+                        
+                        .keynote-header::after {
+                            right: 50%;
+                            top: auto;
+                            bottom: 1.5rem;
+                            transform: translateX(50%);
+                        }
+                        
+                        .keynote-card.active .keynote-header::after {
+                            transform: translateX(50%) rotate(180deg);
                         }
                     }
                 </style>
@@ -462,6 +509,18 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const keynoteHeaders = document.querySelectorAll('.keynote-header');
+            
+            keynoteHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const card = this.closest('.keynote-card');
+                    card.classList.toggle('active');
+                });
+            });
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 
