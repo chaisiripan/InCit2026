@@ -13,6 +13,75 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/presentation.css">
+    <style>
+        /* Image Modal Styles */
+        .img-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        .img-modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1000px;
+            animation-name: zoom-in;
+            animation-duration: 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes zoom-in {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .img-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .img-modal-close:hover,
+        .img-modal-close:focus {
+            color: var(--bangkok-gold);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .expandable-image {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .expandable-image:hover {
+            opacity: 0.85;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -182,6 +251,10 @@
                                 <i class="fas fa-plane-arrival"></i>
                             </div>
                         </div>
+                        <img src="img/transport/Gemini_Generated_Image_xc1re7xc1re7xc1r.png"
+                            alt="Suvarnabhumi Airport to Siam University route" class="expandable-image"
+                            title="Click to enlarge"
+                            style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <ul style="list-style-type: none; padding: 0; color: var(--dark); line-height: 1.6;">
                             <li style="margin-bottom: 0.8rem;"><i class="fas fa-train"
                                     style="color: var(--bangkok-red); margin-right: 8px;"></i><strong>Airport Rail Link
@@ -208,6 +281,10 @@
                                 <i class="fas fa-plane-arrival"></i>
                             </div>
                         </div>
+                        <img src="img/transport/Gemini_Generated_Image_3u26063u26063u26.png"
+                            alt="Don Mueang Airport to Siam University route" class="expandable-image"
+                            title="Click to enlarge"
+                            style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <ul style="list-style-type: none; padding: 0; color: var(--dark); line-height: 1.6;">
                             <li style="margin-bottom: 0.8rem;"><i class="fas fa-subway"
                                     style="color: var(--bangkok-red); margin-right: 8px;"></i><strong>SRT Red Line +
@@ -233,13 +310,13 @@
                         style="border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);">
                         <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
-                            src="https://maps.google.com/maps?q=Siam%20University,%20Phasi%20Charoen,%20Bangkok&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=Siam%20University,%20Phasi%20Charoen,%20Bangkok&t=&z=16&ie=UTF8&iwloc=&output=embed&hl=en"
                             style="border:0; display: block;" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Sponsored Section -->
+                                                                <!-- Sponsored Section -->
         <section id="sponsors"
             style="padding: 4rem 0; background-color: #fff; text-align: center; border-top: 1px solid #eee;">
             <div class="container">
@@ -248,8 +325,9 @@
                 </div>
                 <div
                     style="display: flex; justify-content: center; align-items: center; width: 100%; overflow: hidden; padding-top: 2rem;">
-                    <!-- Placeholder for Sponsors -->
-                    <p style="color: var(--dark); font-size: 1.1rem; font-weight: 500;">Coming Soon</p>
+                    <div style="display: inline-flex; align-items: center; justify-content: center;">
+                        <img src="img/IEEE.png" alt="IEEE Logo" style="height: 300px; width: auto; max-width: 800px; object-fit: contain; mix-blend-mode: multiply; filter: contrast(1.1) drop-shadow(0 6px 12px rgba(0,0,0,0.1)); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; transform: translateZ(0); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.1) translateZ(0)'" onmouseout="this.style.transform='scale(1) translateZ(0)'">
+                    </div>
                 </div>
             </div>
         </section>
@@ -270,49 +348,103 @@
         </section>
     </main>
 
-                <footer id="contact" style="background-color: var(--bangkok-blue); color: white; padding: 4rem 0 1.5rem; position: relative; overflow: hidden;">
+    <footer id="contact"
+        style="background-color: var(--bangkok-blue); color: white; padding: 4rem 0 1.5rem; position: relative; overflow: hidden;">
         <div class="container" style="position: relative; z-index: 2;">
-            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                
+            <div class="footer-content"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+
                 <!-- About & Supported By -->
                 <div class="footer-section">
-                    <h3 style="color: var(--bangkok-gold); font-size: 1.5rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">InCIT 2026<span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: var(--bangkok-gold);"></span></h3>
+                    <h3
+                        style="color: var(--bangkok-gold); font-size: 1.5rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        InCIT 2026<span
+                            style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: var(--bangkok-gold);"></span>
+                    </h3>
                     <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 1.5rem;">
-                        The 10th International Conference on Information Technology, bringing together researchers, academicians, and professionals to share knowledge and innovations.
+                        The 10th International Conference on Information Technology, bringing together researchers,
+                        academicians, and professionals to share knowledge and innovations.
                     </p>
-                    <div style="display: inline-flex; gap: 1rem; align-items: center; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; flex-wrap: wrap; margin-top: 1rem;">
-                        <img src="img/CITT-PNG-1_n.png" alt="CITT Logo" style="height: 55px; width: auto; object-fit: contain; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-                        <img src="img/siam.png" alt="Siam University Logo" style="height: 55px; width: auto; object-fit: contain; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-                        <img src="img/It.jpg" alt="Siam University IT Logo" style="height: 55px; width: auto; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                    <div
+                        style="display: inline-flex; gap: 1rem; align-items: center; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; flex-wrap: wrap; margin-top: 1rem;">
+                        <img src="img/CITT-PNG-1_n.png" alt="CITT Logo"
+                            style="height: 55px; width: auto; object-fit: contain; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                        <img src="img/siam.png" alt="Siam University Logo"
+                            style="height: 55px; width: auto; object-fit: contain; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                        <img src="img/It.jpg" alt="Siam University IT Logo"
+                            style="height: 55px; width: auto; object-fit: contain; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
                     </div>
                 </div>
 
                 <!-- Contact Us -->
                 <div class="footer-section">
-                    <h3 style="color: var(--bangkok-gold); font-size: 1.5rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">Contact Us<span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: var(--bangkok-gold);"></span></h3>
+                    <h3
+                        style="color: var(--bangkok-gold); font-size: 1.5rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Contact Us<span
+                            style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: var(--bangkok-gold);"></span>
+                    </h3>
                     <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">
                         <p style="margin-bottom: 1.2rem; display: flex; align-items: flex-start;">
-                            <i class="fas fa-map-marker-alt" style="color: var(--bangkok-red); font-size: 1.2rem; margin-right: 15px; margin-top: 5px;"></i>
-                            <span><strong>InCIT 2026 Secretariat</strong><br>Faculty of Information Technology<br>Siam University, Bangkok, Thailand</span>
+                            <i class="fas fa-map-marker-alt"
+                                style="color: var(--bangkok-red); font-size: 1.2rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <span><strong>InCIT 2026 Secretariat</strong><br>Faculty of Information Technology<br>Siam
+                                University, Bangkok, Thailand</span>
                         </p>
                         <p style="margin-bottom: 1.2rem; display: flex; align-items: center;">
-                            <i class="fas fa-envelope" style="color: var(--bangkok-gold); font-size: 1.2rem; margin-right: 15px;"></i>
-                            <a href="mailto:incit2026@siam.edu" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s;">incit2026@siam.edu</a>
+                            <i class="fas fa-envelope"
+                                style="color: var(--bangkok-gold); font-size: 1.2rem; margin-right: 15px;"></i>
+                            <a href="mailto:incit2026@siam.edu"
+                                style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s;">incit2026@siam.edu</a>
                         </p>
                         <p style="margin-bottom: 0; display: flex; align-items: flex-start;">
-                            <i class="fas fa-phone-alt" style="color: #1ea24a; font-size: 1.2rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <i class="fas fa-phone-alt"
+                                style="color: #1ea24a; font-size: 1.2rem; margin-right: 15px; margin-top: 5px;"></i>
                             <span>+66 (0) 2-457-0068, 2-867-8000<br>ext. 5130</span>
                         </p>
                     </div>
                 </div>
             </div>
-            
-            <div class="copyright" style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 2rem;">
-                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin: 0;">&copy; 2026 InCIT - International Conference on Information Technology. All Rights Reserved.</p>
+
+            <div class="copyright"
+                style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 2rem;">
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin: 0;">&copy; 2026 InCIT -
+                    International Conference on Information Technology. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="img-modal">
+        <span class="img-modal-close">&times;</span>
+        <img class="img-modal-content" id="expandedImg">
+    </div>
+
+    <script>
+        // Image Modal Logic
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImg");
+        const images = document.querySelectorAll(".expandable-image");
+        const closeBtn = document.getElementsByClassName("img-modal-close")[0];
+
+        if (images && modal && modalImg && closeBtn) {
+            images.forEach(img => {
+                img.onclick = function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            });
+
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
     <script src="js/script.js"></script>
 </body>
 
