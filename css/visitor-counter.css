@@ -1,0 +1,176 @@
+/* ===== Visitor Counter - Compact Bottom Right ===== */
+
+.visitor-counter {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(30, 61, 111, 0.75);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    user-select: none;
+    animation: counterSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.25s ease;
+    pointer-events: auto;
+}
+
+/* Auto-hide when scrolling */
+.visitor-counter.is-scrolling {
+    opacity: 0.25;
+    transform: translateY(4px) scale(0.92);
+    pointer-events: none;
+}
+
+.visitor-counter:hover {
+    opacity: 1 !important;
+    transform: translateY(-2px) scale(1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    pointer-events: auto !important;
+}
+
+@keyframes counterSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Icon */
+.visitor-counter__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bangkok-red, #c12a35), var(--bangkok-gold, #e6c35c));
+    color: #fff;
+    font-size: 0.7rem;
+    box-shadow: 0 2px 8px rgba(193, 42, 53, 0.35);
+    flex-shrink: 0;
+}
+
+/* Content */
+.visitor-counter__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    min-width: 0;
+}
+
+.visitor-counter__label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    line-height: 1;
+}
+
+/* Digits container */
+.visitor-counter__digits {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: nowrap;
+}
+
+.visitor-counter__digit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Montserrat', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--bangkok-gold, #e6c35c);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-shadow: 0 0 6px rgba(230, 195, 92, 0.3);
+    animation: digitAppear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+@keyframes digitAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.visitor-counter__digit--bump {
+    animation: digitBump 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes digitBump {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.2); color: #fff; }
+    100% { transform: scale(1); }
+}
+
+/* Live dot */
+.visitor-counter__live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4cff8d;
+    box-shadow: 0 0 6px rgba(76, 255, 141, 0.5);
+    animation: liveDotBlink 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes liveDotBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+
+/* Responsive - even smaller on mobile */
+@media (max-width: 768px) {
+    .visitor-counter {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        gap: 6px;
+    }
+
+    .visitor-counter__icon {
+        width: 22px;
+        height: 22px;
+        font-size: 0.6rem;
+    }
+
+    .visitor-counter__digit {
+        width: 14px;
+        height: 17px;
+        font-size: 0.65rem;
+    }
+
+    .visitor-counter__label {
+        font-size: 0.45rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .visitor-counter,
+    .visitor-counter__icon,
+    .visitor-counter__digit,
+    .visitor-counter__live-dot {
+        animation: none !important;
+        transition: none !important;
+    }
+}
